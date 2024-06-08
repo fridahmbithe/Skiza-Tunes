@@ -25,7 +25,7 @@ export const Skills = () => {
 
   return (
     <section className="responsive" id="skills">
-      <div className="row">
+      {/* <div className="row">
         <div className="col-12">
           <div className="card">
             <h2>My Skills</h2>
@@ -69,7 +69,7 @@ export const Skills = () => {
             </Row>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
