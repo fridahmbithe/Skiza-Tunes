@@ -14,19 +14,19 @@ export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    }
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   }
 
-    window.addEventListener("scroll", onScroll);
+  //   window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, [])
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
@@ -35,10 +35,10 @@ export const NavBar = () => {
   
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <Navbar.Brand href="/">
-            <img src={logo} className="navbar-brand"></img>
+      <Navbar className="h-20 bg-blue " >
+        <Container className=" w-full">
+          <Navbar.Brand href="/" className="App-logo">
+            <img src={logo} className="App-logo"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
