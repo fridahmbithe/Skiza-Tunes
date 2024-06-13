@@ -1,6 +1,6 @@
 {
-  "short_name": "Mbithe's Portfolio",
-  "name": "My Portfolio Website ",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

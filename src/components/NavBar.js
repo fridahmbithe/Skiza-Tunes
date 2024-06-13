@@ -1,60 +1,41 @@
-import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import linkedin from '../assets/img/linkedin.svg';
-import github from '../assets/img/github.svg';
-import gmailicon from '../assets/img/gmailicon.svg';
-import { HashLink } from 'react-router-hash-link';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
-import logo from '../assets/img/logo.png'
+import React from 'react';
 
-export const NavBar = () => {
-
-  const [activeLink, setActiveLink] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const onScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setScrolled(true);
-  //     } else {
-  //       setScrolled(false);
-  //     }
-  //   }
-
-  //   window.addEventListener("scroll", onScroll);
-
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, [])
-
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-  }
-  
-  
+function Navbar() {
   return (
-    <Router>
-      <Navbar className="h-20 bg-blue " >
-        <Container className=" w-full">
-          <Navbar.Brand href="/" className="App-logo">
-            <img src={logo} className="App-logo"></img>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="navbar-nav">
-            <Nav className="w-100 justify-content-between">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Products</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>About Us</Nav.Link>
-              <Nav.Link href="#resume" className={activeLink === 'resume' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Contact Us</Nav.Link>
-            </Nav>
-            
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      
-    </Router>
-  )
+    <nav className="bg-transparent py-4">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <a href="/" className="text-black font-bold text-xl">
+          My App
+        </a>
+        <ul className="flex space-x-4">
+          <li>
+            <a
+              href="/about"
+              className="text-black-400 hover:text-white transition-colors duration-300"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="/features"
+              className="text-black-400 hover:text-white transition-colors duration-300"
+            >
+              Features
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contact"
+              className="text-black-400 hover:text-white transition-colors duration-300"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
+
+export default Navbar;

@@ -1,23 +1,19 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from "./components/NavBar";
-import { Banner } from "./components/Banner";
-import { Skills } from "./components/Skills";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import routes from './routes';
+
+const AppRoutes = () => {
+  const routing = useRoutes(routes);
+  return routing;
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <NavBar />
-      <Banner />
-      {/* <Skills /> */}
-      {/* <Projects /> */}
-      {/* <Contact /> */}
-      <Footer />
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
-export default App;
+ export default App;
